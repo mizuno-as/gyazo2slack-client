@@ -14,7 +14,7 @@ else
     convert ${CONVOPT} ${1} $TEMP
 fi
 
-IMAGE=$(curl -s -H 'Content-Type: image/png' --data-binary "@${TEMP}" -X POST ${URL})
+IMAGE=$(curl -s -H 'content-type: image/png' --data-binary "@${TEMP}" -X POST ${URL})
 if [ $? -eq 0 ]; then
     gnome-www-browser ${IMAGE}
     echo ${IMAGE} | xclip -sel c
